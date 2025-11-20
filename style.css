@@ -92,7 +92,7 @@ a {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 0;
+    opacity: 1;
     /* For animation */
     transform: translateY(20px);
 }
