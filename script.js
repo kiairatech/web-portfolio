@@ -110,4 +110,40 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Active Navigation State
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    const navObserverOptions = {
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    };
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const currentId = entry.target.getAttribute('id');
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${currentId}`) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, navObserverOptions);
+
+    sections.forEach(section => {
+        navObserver.observe(section);
+    });
+
+    // Handle bottom of page for Contact section
+    window.addEventListener('scroll', () => {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+            navItems.forEach(item => item.classList.remove('active'));
+            // Activate the last item (Contact)
+            navItems[navItems.length - 1].classList.add('active');
+        }
+    });
 });
