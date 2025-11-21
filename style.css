@@ -177,13 +177,23 @@ nav {
     margin-right: auto;
 }
 
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-start;
+}
+
 .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 0.7rem 1.5rem;
     background: var(--accent-color);
     color: var(--bg-color);
     border-radius: 50px;
     font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
@@ -196,12 +206,23 @@ nav {
     background: transparent;
     border: 2px solid var(--accent-color);
     color: var(--accent-color);
-    margin-left: 1rem;
 }
 
 .btn-outline:hover {
     background: rgba(56, 189, 248, 0.1);
 }
+
+.btn-secondary {
+    background: rgba(148, 163, 184, 0.2);
+    color: var(--text-primary);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(148, 163, 184, 0.3);
+    border-color: var(--text-secondary);
+}
+
 
 /* Timeline Section */
 .timeline-section {
@@ -412,6 +433,12 @@ footer {
     text-align: left;
 }
 
+    .cta-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
 .hero-text {
     flex: 1;
 }
@@ -497,6 +524,12 @@ footer {
         flex-direction: column-reverse;
         text-align: center;
         gap: 2rem;
+    }
+
+    .cta-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .profile-img {
